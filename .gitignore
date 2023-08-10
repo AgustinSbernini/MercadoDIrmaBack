@@ -80,6 +80,8 @@ StyleCopReport.xml
 *.meta
 *.obj
 **/obj
+**/mercado-dirma-backend/obj
+mercado-dirma/mercado-dirma-backend/obj
 *.iobj
 *.pch
 *.pdb
