@@ -12,7 +12,7 @@ namespace mercado_dirma_backend.Queries
                 FROM Product
             ";
 
-            using (var conn = Coneccion())
+            using (var conn = GetConection())
             {
                 return conn.Query<Product>(sql);
             }
