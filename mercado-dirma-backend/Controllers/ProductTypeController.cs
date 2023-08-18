@@ -20,22 +20,15 @@ namespace mercado_dirma_backend.Controllers
 
             try
             {
-                result.Data = await productType.GetAll(isActive);
-                if (result.Data is null || !result.Data.Any())
-                {
-                    result.StatusCode = HttpStatusCode.NotFound;
-                    result.Success = false;
-                }
-                else 
-                {
+                    result.Data = await productType.GetAll(isActive);
                     result.StatusCode = HttpStatusCode.OK;
                     result.Success = true;
-                }
+                
                 
             }
             catch (Exception ex)
             {
-
+                // LOG ex
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
@@ -66,7 +59,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-
+                // LOG ex
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
