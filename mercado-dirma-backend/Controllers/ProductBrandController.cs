@@ -63,5 +63,96 @@ namespace mercado_dirma_backend.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public async Task<RequestResponse<bool>> Insert(ProductBrand productName)
+        {
+            var productBrand = new ProductBrandBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productBrand.Insert(productName);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.BadRequest;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
+        [HttpPut]
+        public async Task<RequestResponse<bool>> Delete(int idProductBrand)
+        {
+            var productBrand = new ProductBrandBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productBrand.Delete(idProductBrand);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.NotFound;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
+        [HttpPut]
+        public async Task<RequestResponse<bool>> Update(ProductBrand productName)
+        {
+            var productBrand = new ProductBrandBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productBrand.Update(productName);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.NotFound;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
     }
 }
