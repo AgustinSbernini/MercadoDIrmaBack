@@ -5,7 +5,7 @@ using mercado_dirma_backend.Business;
 
 namespace mercado_dirma_backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
