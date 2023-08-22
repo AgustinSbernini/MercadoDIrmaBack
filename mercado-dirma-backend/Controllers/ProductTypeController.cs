@@ -67,5 +67,97 @@ namespace mercado_dirma_backend.Controllers
             return result;
         }
 
+        [HttpPost]
+        public async Task<RequestResponse<bool>> Insert(ProductType productName)
+        {
+            var  productType = new ProductTypeBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productType.Insert(productName);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.BadRequest;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
+
+        [HttpPut]
+        public async Task<RequestResponse<bool>> Delete(int idProductType)
+        {
+            var productType = new ProductTypeBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productType.Delete(idProductType);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.NotFound;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
+
+        [HttpPut]
+        public async Task<RequestResponse<bool>> Update(ProductType productName)
+        {
+            var productType = new ProductTypeBusiness();
+
+            var result = new RequestResponse<bool>();
+
+            try
+            {
+                result.Data = await productType.Update(productName);
+                if (!result.Data)
+                {
+                    result.StatusCode = HttpStatusCode.NotFound;
+                    result.Success = false;
+                }
+                else
+                {
+                    result.StatusCode = HttpStatusCode.OK;
+                    result.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // LOG ex
+                result.StatusCode = HttpStatusCode.BadRequest;
+                result.Success = false;
+            }
+
+            return result;
+        }
     }
 }
