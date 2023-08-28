@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 public enum Role { Admin = 1, Proovedor, Cliente }
-public enum AppointmentStatus { Nuevo = 1, Cancelado, Reprogramado }
+public enum AppointmentStatus { Nuevo = 1, Cancelado, Reprogramado, Concretado }
 public enum Day
 {
     [Display(Name = "Lunes")]
