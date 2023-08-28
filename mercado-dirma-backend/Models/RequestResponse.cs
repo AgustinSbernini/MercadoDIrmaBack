@@ -12,7 +12,7 @@ namespace mercado_dirma_backend.Models
         {
 
         }
-        public RequestResponse(T response, bool nulleable = false)
+        public RequestResponse(T response, bool nulleable = true)
         {
             Data = response;
             if (response is not null)
@@ -22,8 +22,7 @@ namespace mercado_dirma_backend.Models
             }
             else
             {
-                //revisar status code 404
-                StatusCode = nulleable ? StatusCode = HttpStatusCode.OK : StatusCode = HttpStatusCode.BadRequest;
+                StatusCode = nulleable ? StatusCode = HttpStatusCode.NotFound : StatusCode = HttpStatusCode.BadRequest;
                 Success = nulleable;
             }
         }

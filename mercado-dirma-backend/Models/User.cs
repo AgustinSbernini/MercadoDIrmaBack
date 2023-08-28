@@ -19,7 +19,7 @@ namespace mercado_dirma_backend.Models
 
         public User()
         {
-            
+
         }
         public User(int idUser)
         {

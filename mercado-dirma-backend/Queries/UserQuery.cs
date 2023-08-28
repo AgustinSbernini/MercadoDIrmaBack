@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using mercado_dirma_backend.Models;
+using mercado_dirma_backend.Models.UserDTOs;
 using System.Linq;
 using System.Text;
 
@@ -9,7 +10,7 @@ namespace mercado_dirma_backend.Queries
     {
         public static async Task<IEnumerable<User>> GetAll(bool isActive = false)
         {
-            string sql = @"SELECT * FRM [User]";
+            string sql = @"SELECT * FROM [User]";
 
             using (var conn = GetConection())
             {
@@ -36,7 +37,7 @@ namespace mercado_dirma_backend.Queries
                 }
                 catch
                 {
-                    return new User(0);
+                    return null;
                 }
             }
         }
