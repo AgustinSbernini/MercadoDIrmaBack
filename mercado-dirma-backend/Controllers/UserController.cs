@@ -1,9 +1,6 @@
 ﻿using mercado_dirma_backend.Business;
 using mercado_dirma_backend.Models;
-using mercado_dirma_backend.Models.UserDTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace mercado_dirma_backend.Controllers
 {
@@ -32,14 +29,13 @@ namespace mercado_dirma_backend.Controllers
         }
 
         [HttpPost]
-        public async Task<RequestResponse<bool>> Insert(UserInsertDTO userDTO)
+        public async Task<RequestResponse<bool>> Insert(int idUser, string email, string fullName, string password, int dni, DateTime birthDate, long phoneNumber, string address, DateTime creationDate, DateTime deletionDate, DateTime updateDate, bool active)
         {
             var users = new UserBusiness();
 
-            var result = new RequestResponse<bool>(await users.Insert(userDTO));
+            var result = new RequestResponse<bool>(await users.Insert(idUser, email, fullName, password, dni, birthDate, phoneNumber, address, creationDate, deletionDate, updateDate, active));
 
             return result;
-
         }
     }
 }

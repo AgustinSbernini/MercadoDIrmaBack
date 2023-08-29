@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace mercado_dirma_backend.Models
+﻿namespace mercado_dirma_backend.Models
 {
     public class User
     {
