@@ -14,14 +14,7 @@ namespace mercado_dirma_backend.Queries
 
             using (var conn = GetConection())
             {
-                try
-                {
-                    return await conn.QueryAsync<User>(isActive ? sql + " WHERE Active = 1 " : sql);
-                }
-                catch
-                {
-                    return null;
-                }   
+                return await conn.QueryAsync<User>(isActive ? sql + " WHERE Active = 1 " : sql);
             }
         }
 
@@ -31,14 +24,7 @@ namespace mercado_dirma_backend.Queries
 
             using (var conn = GetConection())
             {
-                try
-                {
-                    return await conn.QueryFirstOrDefaultAsync<User>(sql);
-                }
-                catch
-                {
-                    return null;
-                }
+                return await conn.QueryFirstOrDefaultAsync<User>(sql);
             }
         }
     }
