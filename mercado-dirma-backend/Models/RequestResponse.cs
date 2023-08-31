@@ -7,24 +7,11 @@ namespace mercado_dirma_backend.Models
     {
         public HttpStatusCode StatusCode { get; set; }
         public bool Success { get; set; }
+        public string Message { get; set; } = string.Empty;
         public T Data { get; set; }
         public RequestResponse()
         {
 
-        }
-        public RequestResponse(T response, bool nulleable = true)
-        {
-            Data = response;
-            if (response is not null)
-            {
-                StatusCode = HttpStatusCode.OK;
-                Success = true;
-            }
-            else
-            {
-                StatusCode = nulleable ? StatusCode = HttpStatusCode.NotFound : StatusCode = HttpStatusCode.BadRequest;
-                Success = nulleable;
-            }
         }
     }
 }

@@ -36,5 +36,15 @@ namespace mercado_dirma_backend.Business
             };
             return await UserCommand.Insert(user);
         }
+
+        public async Task<bool> Update(UserUpdateDTO user)
+        {
+            return await UserCommand.Update(user);
+        }
+
+        public async Task<bool> Delete(int idUser)
+        {
+            return await UserCommand.Delete(idUser);
+        }
     }
 }
