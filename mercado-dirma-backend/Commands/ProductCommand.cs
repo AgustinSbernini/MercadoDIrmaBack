@@ -53,37 +53,37 @@ namespace mercado_dirma_backend.Commands
 
         public static async Task<bool> Update(ProductUpdateDTO product)
         {
-        var sql = @"Update Product 
-                    set               
-                        ProductName=@ProductName,
-                        IdProductBrand=@IdProductBrand,
-                        IdProductStatus=@IdProductStatus,
-                        IdProductType=@IdProductType,
-                        IdUserOwner=@IdUserOwner,
-                        Price=@Price,
-                        Size=@Size,
-                        [Description]=@Description,
-                        UpdateDate=@UpdateDate                    
-                        where IdProduct=@IdProduct";
+            var sql = @"Update Product 
+                        set               
+                            ProductName=@ProductName,
+                            IdProductBrand=@IdProductBrand,
+                            IdProductStatus=@IdProductStatus,
+                            IdProductType=@IdProductType,
+                            IdUserOwner=@IdUserOwner,
+                            Price=@Price,
+                            Size=@Size,
+                            [Description]=@Description,
+                            UpdateDate=@UpdateDate                    
+                            where IdProduct=@IdProduct";
 
 
-        using (var db = GetConection())
-        {
-            return await db.ExecuteAsync(sql,
-                new
-                {
-                    product.IdProduct,
-                    product.ProductName,
-                    product.IdProductBrand,
-                    product.IdProductStatus,
-                    product.IdProductType,
-                    product.IdUserOwner,
-                    product.Price,
-                    product.Size,
-                    product.Description,
-                    UpdateDate= DateTime.Now,
-                }) == 1;
-        }
+            using (var db = GetConection())
+            {
+                return await db.ExecuteAsync(sql,
+                    new
+                    {
+                        product.IdProduct,
+                        product.ProductName,
+                        product.IdProductBrand,
+                        product.IdProductStatus,
+                        product.IdProductType,
+                        product.IdUserOwner,
+                        product.Price,
+                        product.Size,
+                        product.Description,
+                        UpdateDate= DateTime.Now,
+                    }) == 1;
+            }
         }
     }
 }
