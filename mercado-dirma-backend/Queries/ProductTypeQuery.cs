@@ -1,6 +1,7 @@
 ﻿using mercado_dirma_backend.Models;
 using System.Text;
 using Dapper;
+using mercado_dirma_backend.DataAccess;
 
 namespace mercado_dirma_backend.Queries
 {

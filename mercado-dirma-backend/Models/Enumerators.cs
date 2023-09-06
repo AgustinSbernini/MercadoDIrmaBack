@@ -4,8 +4,10 @@ public enum Role { Admin = 1, Usuario, Proveedor, Cliente }
 public enum AppointmentStatus { Nuevo = 1, Cancelado, Reprogramado, Concretado }
 public enum Day
 {
+    [Display(Name = "Domingo")]
+    Domingo,
     [Display(Name = "Lunes")]
-    Lunes = 1,
+    Lunes,
     [Display(Name = "Martes")]
     Martes,
     [Display(Name = "Miércoles")]
@@ -16,6 +18,13 @@ public enum Day
     Viernes,
     [Display(Name = "Sábado")]
     Sabado,
-    [Display(Name = "Domingo")]
-    Domingo
+}
+public enum TransactionType
+{
+    [Display(Name = "Compra")]
+    Compra = 1,
+    [Display(Name = "Pago")]
+    Pago,
+    [Display(Name = "Devolución")]
+    Devolucion
 }

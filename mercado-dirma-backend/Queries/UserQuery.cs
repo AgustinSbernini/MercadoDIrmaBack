@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using mercado_dirma_backend.DataAccess;
 using mercado_dirma_backend.Models;
 using mercado_dirma_backend.Models.UserDTOs;
 using System.Linq;

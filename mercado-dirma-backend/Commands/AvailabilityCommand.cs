@@ -1,6 +1,6 @@
 ﻿using mercado_dirma_backend.Models;
-using mercado_dirma_backend.Queries;
 using Dapper;
+using mercado_dirma_backend.DataAccess;
 
 namespace mercado_dirma_backend.Commands
 {
