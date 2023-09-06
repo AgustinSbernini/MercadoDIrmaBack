@@ -1,6 +1,7 @@
 ﻿using mercado_dirma_backend.Business;
 using mercado_dirma_backend.Models;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc; 
+using Serilog;
 using System.Net;
 
 namespace mercado_dirma_backend.Controllers
@@ -24,7 +25,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-                // LOG ex
+                Log.Error("Controller: {controller} - EndPoint: {endpoint} - Exception: {ex}", ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName, ex.Message);
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
@@ -55,7 +56,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-                // LOG ex
+                Log.Error("Controller: {controller} - EndPoint: {endpoint} - Exception: {ex}", ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName, ex.Message);
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
@@ -86,7 +87,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-                // LOG ex
+                Log.Error("Controller: {controller} - EndPoint: {endpoint} - Exception: {ex}", ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName, ex.Message);
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
@@ -117,7 +118,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-                // LOG ex
+                Log.Error("Controller: {controller} - EndPoint: {endpoint} - Exception: {ex}", ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName, ex.Message);
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
@@ -147,7 +148,7 @@ namespace mercado_dirma_backend.Controllers
             }
             catch (Exception ex)
             {
-                // LOG ex
+                Log.Error("Controller: {controller} - EndPoint: {endpoint} - Exception: {ex}", ControllerContext.ActionDescriptor.ControllerName, ControllerContext.ActionDescriptor.ActionName, ex.Message);
                 result.StatusCode = HttpStatusCode.BadRequest;
                 result.Success = false;
             }
