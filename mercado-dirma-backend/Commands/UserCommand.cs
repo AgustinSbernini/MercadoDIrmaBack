@@ -1,7 +1,7 @@
 ﻿using Dapper;
+using mercado_dirma_backend.DataAccess;
 using mercado_dirma_backend.Models;
 using mercado_dirma_backend.Models.UserDTOs;
-using mercado_dirma_backend.Queries;
 using Microsoft.AspNetCore.Identity;
 using System.Net;
 using System.Transactions;

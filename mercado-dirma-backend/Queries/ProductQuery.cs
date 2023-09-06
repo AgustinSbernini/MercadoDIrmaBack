@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Text;
 using mercado_dirma_backend.Models.ProductDTOs;
+using mercado_dirma_backend.DataAccess;
 
 namespace mercado_dirma_backend.Queries
 {

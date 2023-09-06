@@ -1,6 +1,6 @@
 using System.Data.SqlClient;
 
-namespace mercado_dirma_backend.Queries
+namespace mercado_dirma_backend.DataAccess
 {
     public class DaoBase
     {
