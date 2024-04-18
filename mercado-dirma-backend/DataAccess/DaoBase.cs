@@ -4,7 +4,7 @@ namespace mercado_dirma_backend.DataAccess
 {
     public class DaoBase
     {
-        private static string stringConeccion = @"Server=tcp:asbernini-db.database.windows.net,1433;Initial Catalog=Mercado_DIrma;Persist Security Info=False;User ID=sa-sysadmin;Password=C0ntr4L0c4!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;";
+        private static string stringConeccion = @"workstation id=mercadodirma.mssql.somee.com;packet size=4096;user id=agustinsbernini_SQLLogin_1;pwd=449o4huunn;data source=mercadodirma.mssql.somee.com;persist security info=False;initial catalog=mercadodirma;TrustServerCertificate=True";
 
         public static SqlConnection GetConection()
         {
